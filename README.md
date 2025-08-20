@@ -30,6 +30,8 @@ Tools and Methodology
 - Providing all the screenshots of the scans and tests done
 
 
+When testing DVWA, we make sure everything is set and working, including that MariaDB is well set up, and Apache2 is running perfectly
+
 
 
 
