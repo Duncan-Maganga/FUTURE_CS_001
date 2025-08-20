@@ -14,15 +14,15 @@ This is a vulnerability scan report for web applications conducted on Damn Vulne
 **Purpose and Scope**
 
 DVWA is a vulnerable web application, and I was concerned about the web vulnerabilities. This test was done in a controlled lab.
-Tools and Methodology
+Tools and Methodology  
 
-**Target:** Damn Vulnerable Web Application
-**Tools:** Kali Linux 2025 edition
+**Target:** Damn Vulnerable Web Application  
+**Tools:** Kali Linux 2025 edition  
 **Approach:**
-- Set up MariaDB and Apache2 for the Dvwa to run on Kali Linux
-- Log in to DVWA using username “admin” and password “password”, and set security to low.
-- Conducted manual and automated tests using the following tools:
-   - OWASP ZAP – Scanning the web for any vulnerabilities
+- Set up MariaDB and Apache2 for the Dvwa to run on Kali Linux  
+- Log in to DVWA using username “admin” and password “password”, and set security to low.  
+- Conducted manual and automated tests using the following tools:  
+   - OWASP ZAP – Scanning the web for any vulnerabilities  
    - Nikto
    - SQLMap - SQL injection test
    - Manual scan using injections
