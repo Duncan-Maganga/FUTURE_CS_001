@@ -1,9 +1,11 @@
 # Web Application Vulnerability Assessment Report
-**Project:** Vulnerability Assessment on Damn Vulnerable Web Application
-**Tools Used:** OWASP ZAP, Manual Browser Testing
-**Prepared by:** Duncan Maganga
-**Date:** August 18, 2025
-**Task:** 1
+
+
+**Project:** Vulnerability Assessment on Damn Vulnerable Web Application  
+**Tools Used:** OWASP ZAP, Manual Browser Testing  
+**Prepared by:** Duncan Maganga  
+**Date:** August 18, 2025  
+**Task:** 1  
 
 **Executive Summary**
 
