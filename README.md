@@ -1,5 +1,4 @@
-**Web Application Vulnerability Assessment Report**
-
+# Web Application Vulnerability Assessment Report
 **Project:** Vulnerability Assessment on Damn Vulnerable Web Application
 **Tools Used:** OWASP ZAP, Manual Browser Testing
 **Prepared by:** Duncan Maganga
@@ -20,7 +19,7 @@ Tools and Methodology
 **Approach:**
 - Set up MariaDB and Apache2 for the Dvwa to run on Kali Linux
 - Log in to DVWA using username “admin” and password “password”, and set security to low.
-- Conducted manual and automated tests using the following tools:-
+- Conducted manual and automated tests using the following tools:
    - OWASP ZAP – Scanning the web for any vulnerabilities
    - Nikto
    - SQLMap - SQL injection test
@@ -32,8 +31,6 @@ Tools and Methodology
 
 
 
-When testing DVWA, we make sure everything is set and working, including that MariaDB is well set up, and Apache2 is running perfectly
-<img width="468" height="324" alt="image" src="https://github.com/user-attachments/assets/2742f137-dd75-4967-90ea-cd9822a16220" />
 
 
 
