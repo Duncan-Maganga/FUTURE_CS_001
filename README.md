@@ -31,7 +31,15 @@ Tools and Methodology
 
 
 When testing DVWA, we make sure everything is set and working, including that MariaDB is well set up, and Apache2 is running perfectly
+
 ![ZAP Scan Result](owasp6.png)
+
+When everything is set and open Dvwa with the username – ‘Admin’ and Password – ‘password’, leave it running. Start OWASP Zap proxy and scan Dvwa, set the browser to be localhost on the ZapProxy dashboard, and scan automatically.
+
+![ZAP Scan Result](owasp6.png)
+You will find that Content Security Policy is not set, which means the website is not secured properly, and we can perform major attacks on the website.
+
+
 
 
 
