@@ -62,6 +62,8 @@ This will result in bypassing authentication and returning all the rows of the u
 
 
 
+```sql
+SELECT * FROM users WHERE username = 'username' AND password = 'password';
 
 
 
