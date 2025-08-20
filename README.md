@@ -31,6 +31,7 @@ Tools and Methodology
 
 
 When testing DVWA, we make sure everything is set and working, including that MariaDB is well set up, and Apache2 is running perfectly
+![ZAP Scan Result](owasp6.png)
 
 
 
