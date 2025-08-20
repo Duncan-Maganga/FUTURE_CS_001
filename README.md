@@ -48,9 +48,9 @@ You will find that Content Security Policy is not set, which means the website i
 **Severity:** High  
 
 When testing for SQL Injection, enter user queries in the search bar in a typical login scenario. When the user enters their login details and clicks submit, the application takes the user’s values for username and password and incorporates them into a SQL query, such as   
-
---SELECT * FROM users WHERE username = 'username' AND password = 'password';
-  
+```sql
+SELECT * FROM users WHERE username = 'username' AND password = 'password';
+```sql  
 
 But now we replace the username and its closing quotes with the ' OR 1=1 #  and now this will appear like this   
 
