@@ -49,12 +49,11 @@ You will find that Content Security Policy is not set, which means the website i
 
 When testing for SQL Injection, enter user queries in the search bar in a typical login scenario. When the user enters their login details and clicks submit, the application takes the user’s values for username and password and incorporates them into a SQL query, such as   
 
-```sql
-SELECT * FROM users WHERE username = 'username' AND password = 'password';
+--SELECT * FROM users WHERE username = 'username' AND password = 'password';
   
 
 But now we replace the username and its closing quotes with the ' OR 1=1 #  and now this will appear like this   
-```sql
+
 SELECT * FROM users WHERE username =  ' OR 1=1 # AND password = ‘password’ ;  
 
 This single quote denotes a string, and in this case, it is the beginning of the injected input. It modifies the original query, and the **=** sign evaluates the condition to be always true, **OR**  modifies the WHERE clause, and **1=1** always evaluates to true values, and the  # sign ensures that everything that follows is common to doubt. 
