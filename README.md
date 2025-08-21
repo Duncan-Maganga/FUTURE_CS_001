@@ -66,7 +66,56 @@ This will result in bypassing authentication and returning all the rows of the u
 In the user ID enter  **1' ORDER BY 2 #**
  In this scenario, replace username with a single quote **(‘)**. The single quote finishes the query and attempts to find a username with the value that does not exist, and the **ORDER BY 2** is the injection to sort the results of the first column of the table, and the **#** ensures everything follows. When you try to replace 2 with 3, it will be an error, indicating that there are only 2 tables.
 
+![ZAP Scan Result](owasp2.png) 
+
+## Step 3: Check database Version and management system
+
+In the user ID, enter   
+
+```
+1' OR 1=1 UNION SELECT 1, VERSION()#
+```
+
+This injection **1' OR 1=1** returns all the rows of the tables  and **1 UNION SELECT 1, VERSION()#** adds a row with a value of 1 and version information
 ![ZAP Scan Result](owasp3.png) 
+
+## Step 4: Retrieve the user credentials
+In the user ID, enter 
+```
+1' OR 1=1 UNION SELECT user, password FROM users #
+```
+this injection retrieves all the users’ credentials 
+![ZAP Scan Result](owasp4.png) 
+
+**Final step:** Copy the hashed passwords and crack them, confirming successful exploitation  
+
+**Mitigation steps:**  
+- Use of Prepared Statements (with Parameterized Queries)  
+- Use of Properly Constructed Stored Procedures  
+- Allow-list Input Validation  
+
+
+
+## **Task 2:** Reflected XXS attack at low Security level  
+	
+**Description:** Injection into ‘ id ’ parameter using script.  
+**Tool:** Manual Testing   
+**Severity:** High  
+
+In the name ID write Reflected_Test and click submit. You will see the message Hello Reflected Test
+
+![ZAP Scan Result](zap1.png) 
+
+When you search for the source code for the string Reflected Test
+
+![ZAP Scan Result](zap8.png) 
+
+
+
+
+
+
+
 
 
 
