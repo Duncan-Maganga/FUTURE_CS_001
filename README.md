@@ -34,7 +34,7 @@ When testing DVWA, we make sure everything is set and working, including that Ma
 
 ![ZAP Scan Result](accessible.png)
 
-When everything is set and open Dvwa with the username – ‘Admin’ and Password – ‘password’, leave it running. Start OWASP Zap proxy and scan Dvwa, set the browser to be localhost on the ZapProxy dashboard, and scan automatically.
+When everything is set and open Dvwa with the username – **Admin** and Password – **password**, leave it running. Start OWASP Zap proxy and scan Dvwa, set the browser to be localhost on the ZapProxy dashboard, and scan automatically.
 
 ![ZAP Scan Result](owasp6.png)
 You will find that Content Security Policy is not set, which means the website is not secured properly, and we can perform major attacks on the website.
@@ -52,7 +52,7 @@ When testing for SQL Injection, enter user queries in the search bar in a typica
 SELECT * FROM users WHERE username = 'username' AND password = 'password';
 ``` 
 
-But now we replace the username and its closing quotes with the ' OR 1=1 #  and now this will appear like this   
+But now we replace the username and its closing quotes with the **' OR 1=1 #**  and now this will appear like this   
 ```
 SELECT * FROM users WHERE username =  ' OR 1=1 # AND password = ‘password’ ;  
 ```
@@ -61,11 +61,13 @@ This will result in bypassing authentication and returning all the rows of the u
 
 ![ZAP Scan Result](owasp3.png)
 
+## Step 2: Check for the Number of Fields in the Query.
 
+In the user ID enter  **1' ORDER BY 2 #**
+ In this scenario, replace username with a single quote **(‘)**. The single quote finishes the query and attempts to find a username with the value that does not exist, and the **ORDER BY 2** is the injection to sort the results of the first column of the table, and the **#** ensures everything follows. When you try to replace 2 with 3, it will be an error, indicating that there are only 2 tables.
 
-```
-SELECT * FROM users WHERE username = 'username' AND password = 'password';
-```
+![ZAP Scan Result](owasp3.png) 
+
 
 
 
