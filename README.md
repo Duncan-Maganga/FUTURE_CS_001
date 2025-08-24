@@ -102,11 +102,11 @@ this injection retrieves all the users’ credentials
 **Tool:** Manual Testing   
 **Severity:** High  
 
-In the name ID write Reflected_Test and click submit. You will see the message Hello Reflected Test
+In the name ID write **Reflected_Test** and click submit. You will see the message Hello Reflected Test
 
 ![ZAP Scan Result](zap1.png) 
 
-When you search for the source code for the string Reflected Test
+When you search for the source code for the string Reflected Test.
 
 ![ZAP Scan Result](zap8.png) 
 
@@ -176,7 +176,7 @@ Create a malicious HTML file
 </html>
 
 ```
-In your browser file:///home/duncan/clickjack.html
+In your browser type **file:///home/duncan/clickjack.html**
 
 ![ZAP Scan Result](zap2.png) 
 
@@ -184,6 +184,6 @@ This confirms that the test was successful, and the site is vulnerable to clickj
 
 
 ### Mitigation:
-- Use secure response headers on X-Frame-Options and Content Security Policy  
-- Use frame bursting as a secondary layer  
-- Use Design-level defence, such as double-click confirmation, user interaction, and visual cues   
+- Use secure response headers on X-Frame-Options and Content Security Policy.    
+- Use frame bursting as a secondary layer.    
+- Use Design-level defence, such as double-click confirmation, user interaction, and visual cues.     
