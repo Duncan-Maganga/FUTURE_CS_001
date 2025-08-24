@@ -112,7 +112,7 @@ When you search for the source code for the string Reflected Test
 
 Then, when on the user ID enter the   
 ```
-<script>alert(''You are hacked! Log out immediately'')</script>  
+<script>alert('You are hacked! Log out immediately')</script>  
 ```
 An alert box will appear with the word **You are hacked! Log out immediately.** This means this site is vulnerable to reflected XSS attacks, and we have successfully exploited the vulnerability. 
 When the user pastes the URL in a different browser, the word **You are hacked! Log out immediately.** will still display, which means a malicious script will execute.
